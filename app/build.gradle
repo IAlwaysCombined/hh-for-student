@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -9,6 +10,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 
     defaultConfig {
@@ -48,13 +50,21 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Navigation
-    def navigation = "2.4.0"
+    def navigation = "2.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
 
     //Firebase
-    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.0.1'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
+    implementation platform('com.google.firebase:firebase-bom:29.3.0')
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
+    // To use only without reflection variants of viewBinding
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.3'
+
+    //Circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

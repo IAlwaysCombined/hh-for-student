@@ -2,6 +2,7 @@ package com.zaitsev.hhforstydent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -11,6 +12,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zaitsev.hhforstydent.databinding.ActivityMainBinding
+import com.zaitsev.hhforstydent.feature.activity.AuthActivity
+import com.zaitsev.hhforstydent.utils.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,15 +28,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        APP_ACTIVITY = this
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentNavigate) as NavHostFragment
         navController = navHostFragment.navController
         toolbar = binding.mainToolbar
         bottomNavigationView = binding.mainBottomNav
-
+        initFirebase()
+        initFunc()
         setupBottomNavigationView()
         setupToolbar()
+    }
 
+    //Initial functions
+    private fun initFunc() {
+        if (AUTH.currentUser != null) {
+            Log.d("TAG", AUTH.currentUser.toString())
+        } else {
+            replaceActivity(AuthActivity())
+        }
     }
 
     private fun setupBottomNavigationView(){

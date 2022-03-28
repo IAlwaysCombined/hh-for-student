@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/entityFragment"
-        android:name="com.zaitsev.hhforstydent.ui.EntityFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.entity.EntityFragment"
         android:label="Учереждения"
         tools:layout="@layout/fragment_entity" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.zaitsev.hhforstydent.ui.SettingsFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.SettingsFragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.zaitsev.hhforstydent.ui.ProfileFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.profile.ProfileFragment"
         android:label="Профиль"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/likeFragment"
-        android:name="com.zaitsev.hhforstydent.ui.LikeFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.LikeFragment"
         android:label="Избранное"
         tools:layout="@layout/fragment_like" />
 </navigation>
