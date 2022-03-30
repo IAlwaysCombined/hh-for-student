@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp"
+    android:id="@+id/itemCompany"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginTop="8dp">
@@ -26,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewName"
+            android:id="@+id/textViewNameCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,9 +52,9 @@
             android:layout_marginTop="16dp"
             android:text="О компании"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewCompany"
-            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameCompany"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -63,7 +64,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

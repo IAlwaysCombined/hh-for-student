@@ -9,7 +9,11 @@
         android:id="@+id/entityFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.entity.EntityFragment"
         android:label="Учереждения"
-        tools:layout="@layout/fragment_entity" />
+        tools:layout="@layout/fragment_entity" >
+        <action
+            android:id="@+id/action_entityFragment_to_entityDetailFragment"
+            app:destination="@id/entityDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.SettingsFragment"
@@ -25,4 +29,9 @@
         android:name="com.zaitsev.hhforstydent.feature.fragment.LikeFragment"
         android:label="Избранное"
         tools:layout="@layout/fragment_like" />
+    <fragment
+        android:id="@+id/entityDetailFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.entity_detail.EntityDetailFragment"
+        android:label="fragment_entity_detail"
+        tools:layout="@layout/fragment_entity_detail" />
 </navigation>

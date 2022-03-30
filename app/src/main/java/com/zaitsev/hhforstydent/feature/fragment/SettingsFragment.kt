@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.zaitsev.hhforstydent.R
+import com.zaitsev.hhforstydent.core.BaseFragment
 import com.zaitsev.hhforstydent.databinding.FragmentSettingsBinding
 
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
