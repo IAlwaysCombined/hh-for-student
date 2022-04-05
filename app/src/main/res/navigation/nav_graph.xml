@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/likeFragment"
-        android:name="com.zaitsev.hhforstydent.feature.fragment.LikeFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.like.LikeFragment"
         android:label="Избранное"
         tools:layout="@layout/fragment_like" />
     <fragment

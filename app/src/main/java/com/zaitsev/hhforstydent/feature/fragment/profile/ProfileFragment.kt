@@ -3,7 +3,11 @@ package com.zaitsev.hhforstydent.feature.fragment.profile
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.onNavDestinationSelected
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -21,8 +25,11 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
     private val viewBinding by viewBinding(FragmentProfileBinding::bind)
 
+    private lateinit var navController: NavController
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         initButtons()
         initObserve()
     }
@@ -61,7 +68,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
             }
         }
     }
-
 
     private fun initButtons() = with(viewBinding) {
         buttonExit.setOnClickListener {

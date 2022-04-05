@@ -7,6 +7,7 @@ lateinit var UID: String
 
 const val NODE_USERS = "User"
 const val NODE_PLACES = "Place"
+const val NODE_PLACES_LIKE = "FavoritePlace"
 const val CHILD_EMAIL = "email"
 
 fun initFirebase() {

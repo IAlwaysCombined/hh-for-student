@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HhForStudent">
         <activity
-            android:name=".feature.activity.AuthActivity"
-            android:exported="false" />
-        <activity
             android:name=".feature.fragment.activity.SplashActivity"
             android:exported="true"
             android:theme="@style/splashScreen">
@@ -24,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".feature.activity.AuthActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
