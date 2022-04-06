@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.onNavDestinationSelected
@@ -50,7 +51,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initChangeUserRole(){
-
+//        if(true){
+//            findNavController(APP_ACTIVITY).navigate()
+//        }
+//        else{
+//
+//        }
     }
 
     private fun setupBottomNavigationView(){

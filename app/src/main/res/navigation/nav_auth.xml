@@ -29,10 +29,23 @@
         android:id="@+id/authFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.authorization.auth.AuthFragment"
         android:label="fragment_auth"
-        tools:layout="@layout/fragment_auth" />
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_placeAuthFragment"
+            app:destination="@id/placeAuthFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.authorization.registration.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/placeAuthFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.PlaceAuthFragment"
+        android:label="fragment_place_auth"
+        tools:layout="@layout/fragment_place_auth" />
 </navigation>

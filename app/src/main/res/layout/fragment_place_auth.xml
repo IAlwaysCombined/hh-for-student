@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".feature.fragment.authorization.auth.AuthFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".feature.fragment.PlaceAuthFragment">
 
     <ImageView
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonBackPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -18,17 +17,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewOne"
+        android:id="@+id/textViewOnePlace"
         style="@style/textViewTitleAuthorization"
         android:layout_marginTop="80dp"
         android:text="Авторизация"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonBack" />
+        app:layout_constraintTop_toBottomOf="@id/buttonBackPlace" />
 
     <TextView
-        android:id="@+id/textViewTwo"
+        android:id="@+id/textViewTwoPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -39,79 +38,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewOne" />
+        app:layout_constraintTop_toBottomOf="@id/textViewOnePlace" />
 
     <TextView
-        android:id="@+id/textViewLogin"
+        android:id="@+id/textViewLoginPlace"
         style="@style/textViewLabelEditText"
         android:text="Логин"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTwo" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTwoPlace" />
 
     <EditText
-        android:id="@+id/editTextLogin"
+        android:id="@+id/editTextLoginPlace"
         style="@style/editTextStyle"
         android:layout_marginTop="16dp"
         android:hint="Введите логин"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLoginPlace" />
 
     <TextView
-        android:id="@+id/textViewPassword"
+        android:id="@+id/textViewPasswordPlace"
         style="@style/textViewLabelEditText"
         android:text="Пароль"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLoginPlace" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextPasswordPlace"
         style="@style/editTextStyle"
         android:layout_marginTop="16dp"
         android:hint="Введите пароль"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPasswordPlace" />
 
     <Button
-        android:id="@+id/buttonAuthorization"
+        android:id="@+id/buttonAuthPlace"
         style="@style/buttonMain"
         android:layout_marginTop="48dp"
         android:text="Войти"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
-    <Button
-        android:id="@+id/buttonAuthGoogle"
-        style="@style/buttonSecond"
-        android:layout_marginTop="16dp"
-        app:backgroundTint="@null"
-        android:visibility="gone"
-        android:drawableStart="@drawable/google"
-        android:text="Войти через Google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAuthorization" />
-
-    <TextView
-        android:id="@+id/textViewAuthPlace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="Войти как организация"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAuthorization" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordPlace" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

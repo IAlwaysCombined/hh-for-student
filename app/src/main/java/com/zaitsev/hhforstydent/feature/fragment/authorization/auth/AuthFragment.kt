@@ -46,6 +46,9 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
         buttonAuthGoogle.setOnClickListener {
 
         }
+        textViewAuthPlace.setOnClickListener{
+            findNavController().navigate(R.id.action_authFragment_to_placeAuthFragment)
+        }
     }
 
 }
