@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.fragment.SettingsFragment"
-    android:background="@color/gay_1">
+    android:background="@color/gay_1"
+    android:overScrollMode="never"
+    tools:context=".feature.fragment.settings.SettingsFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewEditImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/editTextNameEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Имя"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewEditImage" />
+
+        <EditText
+            android:id="@+id/editTextSurnameEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Фамилия"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNameEdit" />
+
+        <EditText
+            android:id="@+id/editTextMiddleNameEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Отчество"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSurnameEdit" />
+
+        <EditText
+            android:id="@+id/editTextSpecialEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Специальность"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextMiddleNameEdit" />
+
+        <EditText
+            android:id="@+id/editTextCourseEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Курс"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSpecialEdit" />
+
+        <EditText
+            android:id="@+id/editTextStackEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Стек технологий"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCourseEdit" />
+
+        <EditText
+            android:id="@+id/editTextLanguageEdit"
+            style="@style/editTextStyle"
+            android:layout_marginTop="16dp"
+            android:hint="Языки"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextStackEdit" />
+
+        <Button
+            android:id="@+id/buttonSettings"
+            style="@style/buttonMain"
+            android:layout_marginBottom="32dp"
+            android:text="Сохранить"
+            android:layout_marginTop="32dp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLanguageEdit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

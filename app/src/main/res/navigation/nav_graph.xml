@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.zaitsev.hhforstydent.feature.fragment.SettingsFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.settings.SettingsFragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_settings" />
     <fragment
@@ -34,4 +34,9 @@
         android:name="com.zaitsev.hhforstydent.feature.fragment.entity_detail.EntityDetailFragment"
         android:label="fragment_entity_detail"
         tools:layout="@layout/fragment_entity_detail" />
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.portfolio.PortfolioFragment"
+        android:label="Портфолио"
+        tools:layout="@layout/fragment_portfolio" />
 </navigation>

@@ -1,13 +1,12 @@
 package com.zaitsev.hhforstydent.feature.fragment.profile
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.onNavDestinationSelected
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,8 +24,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
     private val viewBinding by viewBinding(FragmentProfileBinding::bind)
 
-    private lateinit var navController: NavController
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
@@ -34,6 +31,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         initObserve()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initObserve() = with(viewBinding) {
         val db = Firebase.firestore
         val uid = AUTH.currentUser?.uid.toString()
@@ -54,13 +52,13 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
                 val image = snapshot.getString("ImageURL")
 
 
-                textViewName.text = name.toString()
-                textViewCourse.text = course.toString()
-                textViewSurname.text = surname.toString()
-                textViewPatronymic.text = patronymic.toString()
-                textViewSpecial.text = special.toString()
-                textViewProgramLanguage.text = languages.toString()
-                textViewStack.text = stack.toString()
+                textViewName.text = "Имя: " + name.toString()
+                textViewCourse.text = "Курс: " + course.toString()
+                textViewSurname.text = "Отчество: " + surname.toString()
+                textViewPatronymic.text = "Фамилия: " + patronymic.toString()
+                textViewSpecial.text = "Специальность: " + special.toString()
+                textViewProgramLanguage.text = "Языки: " + languages.toString()
+                textViewStack.text = "Стэк: " + stack.toString()
                 setImageToImageView(image.toString(), imageViewProfile)
                 Log.d(TAG, "Current data: ${snapshot.data}")
             } else {
@@ -74,6 +72,10 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
             AUTH.signOut()
             replaceActivity(AuthActivity())
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.toolbar_nav_menu, menu)
     }
 
 }

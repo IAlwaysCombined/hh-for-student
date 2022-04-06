@@ -1,8 +1,11 @@
-package com.zaitsev.hhforstydent.feature.fragment.like
+package com.zaitsev.hhforstydent.feature.fragment.portfolio
 
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -11,18 +14,19 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.zaitsev.hhforstydent.R
 import com.zaitsev.hhforstydent.core.BaseFragment
 import com.zaitsev.hhforstydent.databinding.FragmentLikeBinding
-import com.zaitsev.hhforstydent.utils.APP_ACTIVITY
-import com.zaitsev.hhforstydent.utils.NODE_PLACES
-import com.zaitsev.hhforstydent.utils.NODE_PLACES_LIKE
-import com.zaitsev.hhforstydent.utils.UID
+import com.zaitsev.hhforstydent.databinding.FragmentPortfolioBinding
+import com.zaitsev.hhforstydent.feature.fragment.like.Like
+import com.zaitsev.hhforstydent.feature.fragment.like.LikeAdapter
+import com.zaitsev.hhforstydent.utils.*
 
-class LikeFragment : BaseFragment(R.layout.fragment_like) {
 
-    private val viewBinding by viewBinding(FragmentLikeBinding::bind)
+class PortfolioFragment : BaseFragment(R.layout.fragment_portfolio) {
+
+    private val viewBinding by viewBinding(FragmentPortfolioBinding::bind)
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var likeArrayList: ArrayList<Like>
-    private lateinit var adapter: LikeAdapter
+    private lateinit var portfolioArrayList: ArrayList<Portfolio>
+    private lateinit var adapter: PortfolioAdapter
     private lateinit var db: FirebaseFirestore
 
 
@@ -31,23 +35,25 @@ class LikeFragment : BaseFragment(R.layout.fragment_like) {
         initAdapter()
     }
 
-    private fun initAdapter()  = with(viewBinding) {
-        recyclerView = recyclerviewLike
+    private fun initAdapter() = with(viewBinding) {
+        recyclerView = recyclerViewPortfolio
         recyclerView.layoutManager = LinearLayoutManager(APP_ACTIVITY)
         recyclerView.setHasFixedSize(true)
 
-        likeArrayList = arrayListOf()
+        portfolioArrayList = arrayListOf()
 
-        adapter = LikeAdapter(likeArrayList)
+        adapter = PortfolioAdapter(portfolioArrayList)
 
         recyclerView.adapter = adapter
 
         listener()
+
     }
 
-    private fun listener() {
+    private fun listener(){
         db = FirebaseFirestore.getInstance()
-        db.collection(NODE_PLACES_LIKE).document(UID).collection(NODE_PLACES)
+
+        db.collection(NODE_USERS).document(UID).collection(NODE_PORTFOLIO)
             .addSnapshotListener { value, error ->
                 if (error != null) {
                     Log.e("Error", error.toString())
@@ -56,7 +62,7 @@ class LikeFragment : BaseFragment(R.layout.fragment_like) {
 
                 for (dc: DocumentChange in value?.documentChanges!!) {
                     if (dc.type == DocumentChange.Type.ADDED) {
-                        likeArrayList.add(dc.document.toObject(Like::class.java))
+                        portfolioArrayList.add(dc.document.toObject(Portfolio::class.java))
                     }
                 }
 

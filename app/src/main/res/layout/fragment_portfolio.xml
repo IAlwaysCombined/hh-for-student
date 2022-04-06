@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gay_1"
-    tools:context=".feature.fragment.like.LikeFragment">
+    tools:context=".feature.fragment.portfolio.PortfolioFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewLike"
+        android:id="@+id/recyclerViewPortfolio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never" />
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
