@@ -1,4 +1,4 @@
-package com.zaitsev.hhforstydent.feature.fragment.activity
+package com.zaitsev.hhforstydent.feature.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent

@@ -14,10 +14,7 @@ import com.zaitsev.hhforstydent.R
 import com.zaitsev.hhforstydent.core.BaseFragment
 import com.zaitsev.hhforstydent.databinding.FragmentProfileBinding
 import com.zaitsev.hhforstydent.feature.activity.AuthActivity
-import com.zaitsev.hhforstydent.utils.AUTH
-import com.zaitsev.hhforstydent.utils.NODE_USERS
-import com.zaitsev.hhforstydent.utils.replaceActivity
-import com.zaitsev.hhforstydent.utils.setImageToImageView
+import com.zaitsev.hhforstydent.utils.*
 
 
 class ProfileFragment : BaseFragment(R.layout.fragment_profile) {

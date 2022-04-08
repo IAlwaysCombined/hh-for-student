@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/orderFragment"
+        android:title="Заявки"
+        android:icon="@drawable/ic_portfolio"/>
+
+    <item
+        android:id="@+id/studentsFragment"
+        android:title="Студенты"
+        android:icon="@drawable/ic_entity_item"/>
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Профиль"
+        android:icon="@drawable/ic_profile_item"/>
+
+</menu>

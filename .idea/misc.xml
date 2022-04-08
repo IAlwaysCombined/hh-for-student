@@ -3,20 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/drawable/ic_entity_item.xml" value="0.1" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/activity_auth.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/activity_place.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/activity_splash.xml" value="0.136" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_auth.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_entity.xml" value="0.20652173913043478" />
-        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_entity_detail.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_entity_detail.xml" value="0.25" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_launch.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_like.xml" value="0.18478260869565216" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_place_auth.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_place_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_place_order.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_place_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_place_students.xml" value="0.176" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_portfolio.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_registration.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_settings.xml" value="0.2" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/fragment_vacancy.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/item_view_company.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/item_view_place_student.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/item_view_portfolio.xml" value="0.1" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/item_view_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/layout/item_view_vacancy.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/menu/bottom_nav_place_menu.xml" value="0.176" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hh-for-student/app/src/main/res/menu/toolbar_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hhforstudent/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/vital/AndroidStudioProjects/hhforstudent/app/src/main/res/layout/fragment_entity.xml" value="0.30085470085470084" />

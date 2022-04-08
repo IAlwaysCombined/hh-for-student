@@ -1,4 +1,4 @@
-package com.zaitsev.hhforstydent.feature.fragment.entity
+package com.zaitsev.hhforstydent.feature.fragment.place_order
 
 import android.os.Bundle
 import android.util.Log
@@ -10,17 +10,17 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.zaitsev.hhforstydent.R
 import com.zaitsev.hhforstydent.core.BaseFragment
-import com.zaitsev.hhforstydent.databinding.FragmentEntityBinding
+import com.zaitsev.hhforstydent.databinding.FragmentPlaceOrderBinding
 import com.zaitsev.hhforstydent.utils.APP_ACTIVITY
-import com.zaitsev.hhforstydent.utils.NODE_PLACES
+import com.zaitsev.hhforstydent.utils.NODE_ORDER
 
-class EntityFragment : BaseFragment(R.layout.fragment_entity) {
+class PlaceOrderFragment : BaseFragment(R.layout.fragment_place_order) {
 
-    private val viewBinding by viewBinding(FragmentEntityBinding::bind)
+    private val viewBinding by viewBinding(FragmentPlaceOrderBinding::bind)
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var entityArrayList: ArrayList<Entity>
-    private lateinit var adapter: EntityAdapter
+    private lateinit var orderArrayList: ArrayList<PlaceOrder>
+    private lateinit var adapter: PlaceOrderAdapter
     private lateinit var db: FirebaseFirestore
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,23 +29,22 @@ class EntityFragment : BaseFragment(R.layout.fragment_entity) {
     }
 
     private fun initAdapter() = with(viewBinding) {
-        recyclerView = recyclerViewEntity
+        recyclerView = orderPlaceRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(APP_ACTIVITY)
         recyclerView.setHasFixedSize(true)
 
-        entityArrayList = arrayListOf()
+        orderArrayList = arrayListOf()
 
-        adapter = EntityAdapter(entityArrayList)
+        adapter = PlaceOrderAdapter(orderArrayList)
 
         recyclerView.adapter = adapter
 
         listener()
-
     }
 
     private fun listener() {
         db = FirebaseFirestore.getInstance()
-        db.collection(NODE_PLACES)
+        db.collection(NODE_ORDER).document("AA0bPT9AaPhmCwUTzjLtJISxRpA3").collection("AA0bPT9AaPhmCwUTzjLtJISxRpA3")
             .addSnapshotListener { value, error ->
                 if (error != null) {
                     Log.e("Error", error.toString())
@@ -54,7 +53,7 @@ class EntityFragment : BaseFragment(R.layout.fragment_entity) {
 
                 for (dc: DocumentChange in value?.documentChanges!!) {
                     if (dc.type == DocumentChange.Type.ADDED) {
-                        entityArrayList.add(dc.document.toObject(Entity::class.java))
+                        orderArrayList.add(dc.document.toObject(PlaceOrder::class.java))
                     }
                 }
 

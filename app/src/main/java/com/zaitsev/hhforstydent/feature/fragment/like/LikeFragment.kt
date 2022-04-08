@@ -25,7 +25,6 @@ class LikeFragment : BaseFragment(R.layout.fragment_like) {
     private lateinit var adapter: LikeAdapter
     private lateinit var db: FirebaseFirestore
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()

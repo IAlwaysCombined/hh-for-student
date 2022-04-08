@@ -9,10 +9,14 @@
         android:id="@+id/entityFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.entity.EntityFragment"
         android:label="Учереждения"
-        tools:layout="@layout/fragment_entity" >
+        tools:layout="@layout/fragment_entity">
+
         <action
             android:id="@+id/action_entityFragment_to_entityDetailFragment"
-            app:destination="@id/entityDetailFragment" />
+            app:destination="@id/entityDetailFragment"/>
+        <action
+            android:id="@+id/action_entityFragment_to_vacancyFragment"
+            app:destination="@id/vacancyFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -32,11 +36,25 @@
     <fragment
         android:id="@+id/entityDetailFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.entity_detail.EntityDetailFragment"
-        android:label="fragment_entity_detail"
-        tools:layout="@layout/fragment_entity_detail" />
+        android:label="О компании"
+        tools:layout="@layout/fragment_entity_detail" >
+        <argument
+            android:name="arg"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/portfolioFragment"
         android:name="com.zaitsev.hhforstydent.feature.fragment.portfolio.PortfolioFragment"
         android:label="Портфолио"
         tools:layout="@layout/fragment_portfolio" />
+    <fragment
+        android:id="@+id/vacancyFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.vacancy.VacancyFragment"
+        android:label="Вакансии"
+        tools:layout="@layout/fragment_vacancy" >
+        <argument
+            android:name="arg"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

@@ -67,7 +67,8 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
             dateMap[CHILD_LANGUAGE] = editTextLanguageEdit.text.toString()
             dateMap[CHILD_SPECIAL] = editTextSpecialEdit.text.toString()
             dateMap[CHILD_STACK] = editTextStackEdit.text.toString()
-            db.collection(NODE_USERS).document(uid).set(dateMap)
+            dateMap[CHILD_UID] = uid
+            db.collection(NODE_USERS).document(uid).update(dateMap)
             showBaseSnackBar("Данные успешно обновлены!")
         }
 

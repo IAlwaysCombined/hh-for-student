@@ -45,7 +45,7 @@
         tools:layout="@layout/fragment_registration" />
     <fragment
         android:id="@+id/placeAuthFragment"
-        android:name="com.zaitsev.hhforstydent.feature.fragment.PlaceAuthFragment"
+        android:name="com.zaitsev.hhforstydent.feature.fragment.authorization.place_auth.PlaceAuthFragment"
         android:label="fragment_place_auth"
         tools:layout="@layout/fragment_place_auth" />
 </navigation>

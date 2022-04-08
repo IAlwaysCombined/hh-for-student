@@ -29,7 +29,6 @@ class PortfolioFragment : BaseFragment(R.layout.fragment_portfolio) {
     private lateinit var adapter: PortfolioAdapter
     private lateinit var db: FirebaseFirestore
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()

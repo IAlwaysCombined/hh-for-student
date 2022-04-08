@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HhForStudent">
         <activity
-            android:name=".feature.fragment.activity.SplashActivity"
+            android:name=".feature.activity.PlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.activity.SplashActivity"
             android:exported="true"
             android:theme="@style/splashScreen">
             <intent-filter>

@@ -1,6 +1,7 @@
 package com.zaitsev.hhforstydent.feature.fragment.entity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.zaitsev.hhforstydent.R
 import com.zaitsev.hhforstydent.feature.fragment.entity_detail.EntityDetailFragment
@@ -16,6 +19,8 @@ import com.zaitsev.hhforstydent.utils.setImageToImageView
 
 class EntityAdapter(private var entityList: ArrayList<Entity>) :
     RecyclerView.Adapter<EntityAdapter.EntityViewHolder>() {
+
+    val bundle = Bundle()
 
     class EntityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView? = itemView.findViewById(R.id.textViewNameCompany)
@@ -35,18 +40,11 @@ class EntityAdapter(private var entityList: ArrayList<Entity>) :
         holder.name?.text = entity.Name
         holder.description?.text = entity.Description
         setImageToImageView(entity.Image_url, holder.imageUrl!!)
-        holder.item?.setOnClickListener{
-            val bundle = Bundle()
-            bundle.putString("nameCompany", entityList[position].Name)
-            bundle.putString("idCompany", entityList[position].id)
-            println(entityList[position].id)
-
-//            val frgFav = EntityDetailFragment(bundle)
-//            frgFav.arguments = bundle
-//
-//            val fragmentTrasaction: FragmentTransaction = APP_ACTIVITY.supportFragmentManager.beginTransaction()
-//            fragmentTrasaction.replace(R.id.main_container, frgFav, "frg")
-//            fragmentTrasaction.commit()
+        Log.d("Id place", entity.ID)
+        holder.item?.setOnClickListener{ view ->
+            bundle.putString("arg", entityList[position].ID)
+            Log.d("Bundle", bundle.toString())
+            view.findNavController().navigate(R.id.action_entityFragment_to_entityDetailFragment, bundle)
         }
     }
 

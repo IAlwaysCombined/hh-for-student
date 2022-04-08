@@ -1,4 +1,4 @@
-package com.zaitsev.hhforstydent.feature.fragment.entity
+package com.zaitsev.hhforstydent.feature.fragment.place_students
 
 import android.os.Bundle
 import android.util.Log
@@ -10,42 +10,45 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.zaitsev.hhforstydent.R
 import com.zaitsev.hhforstydent.core.BaseFragment
-import com.zaitsev.hhforstydent.databinding.FragmentEntityBinding
-import com.zaitsev.hhforstydent.utils.APP_ACTIVITY
-import com.zaitsev.hhforstydent.utils.NODE_PLACES
+import com.zaitsev.hhforstydent.databinding.FragmentPlaceAuthBinding
+import com.zaitsev.hhforstydent.databinding.FragmentPlaceStudentsBinding
+import com.zaitsev.hhforstydent.feature.fragment.like.Like
+import com.zaitsev.hhforstydent.feature.fragment.like.LikeAdapter
+import com.zaitsev.hhforstydent.utils.*
 
-class EntityFragment : BaseFragment(R.layout.fragment_entity) {
 
-    private val viewBinding by viewBinding(FragmentEntityBinding::bind)
+class PlaceStudentsFragment : BaseFragment(R.layout.fragment_place_students) {
+
+    private val viewBinding by viewBinding(FragmentPlaceStudentsBinding::bind)
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var entityArrayList: ArrayList<Entity>
-    private lateinit var adapter: EntityAdapter
+    private lateinit var placeStudentsArrayList: ArrayList<PlaceStudents>
+    private lateinit var adapter: PlaceStudentsAdapter
     private lateinit var db: FirebaseFirestore
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
     }
 
-    private fun initAdapter() = with(viewBinding) {
-        recyclerView = recyclerViewEntity
+    fun initAdapter() = with(viewBinding){
+        recyclerView = placeStudentRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(APP_ACTIVITY)
         recyclerView.setHasFixedSize(true)
 
-        entityArrayList = arrayListOf()
+        placeStudentsArrayList = arrayListOf()
 
-        adapter = EntityAdapter(entityArrayList)
+        adapter = PlaceStudentsAdapter(placeStudentsArrayList)
 
         recyclerView.adapter = adapter
 
-        listener()
-
+        launch()
     }
 
-    private fun listener() {
+    private fun launch(){
         db = FirebaseFirestore.getInstance()
-        db.collection(NODE_PLACES)
+        db.collection(NODE_USERS)
             .addSnapshotListener { value, error ->
                 if (error != null) {
                     Log.e("Error", error.toString())
@@ -54,7 +57,7 @@ class EntityFragment : BaseFragment(R.layout.fragment_entity) {
 
                 for (dc: DocumentChange in value?.documentChanges!!) {
                     if (dc.type == DocumentChange.Type.ADDED) {
-                        entityArrayList.add(dc.document.toObject(Entity::class.java))
+                        placeStudentsArrayList.add(dc.document.toObject(PlaceStudents::class.java))
                     }
                 }
 
