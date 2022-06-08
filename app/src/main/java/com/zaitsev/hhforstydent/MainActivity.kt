@@ -42,12 +42,13 @@ class MainActivity : AppCompatActivity() {
 
     //Initial functions
     private fun initFunc() {
-        if (AUTH.currentUser != null) {
-            initChangeUserRole()
-            Log.d("TAG", AUTH.currentUser.toString())
-        } else {
-            replaceActivity(AuthActivity())
-        }
+
+//        if (AUTH.currentUser != null) {
+//            initChangeUserRole()
+//            Log.d("TAG", AUTH.currentUser.toString())
+//        } else {
+//            replaceActivity(AuthActivity())
+//        }
     }
 
     private fun initChangeUserRole(){

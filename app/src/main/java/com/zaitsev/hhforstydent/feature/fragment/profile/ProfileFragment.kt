@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -20,6 +21,8 @@ import com.zaitsev.hhforstydent.utils.*
 class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
     private val viewBinding by viewBinding(FragmentProfileBinding::bind)
+
+    private val viewModel by lazy {ProfileViewModel::class.java}
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
